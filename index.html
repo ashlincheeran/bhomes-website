@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>betterhomes — Dubai real estate, sales & leasing</title>
+  <meta name="description" content="betterhomes helps you buy, sell and rent property across Dubai — apartments, villas, townhouses and penthouses in the city's best communities." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== Header (shared across pages) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">better<span>homes</span></a>
+      <nav class="nav" id="nav">
+        <a href="properties.html">Buy</a>
+        <a href="properties.html">Rent</a>
+        <a href="properties.html">New projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--primary" href="contact.html">List your property</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== Hero + search ===== -->
+  <!-- NOTE: the <h1> and tagline below are edited by two competing feature
+       branches (marketing-hero vs seo-hero). See docs/CONFLICT-WALKTHROUGH.md -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <h1>Find a home you love in Dubai</h1>
+      <p>Thousands of apartments, villas and townhouses for sale and rent — guided by betterhomes advisors who know every community.</p>
+
+      <form class="search-bar" onsubmit="return false;">
+        <div class="tabs">
+          <button type="button" class="tab is-active">Buy</button>
+          <button type="button" class="tab">Rent</button>
+          <button type="button" class="tab">New projects</button>
+        </div>
+        <div class="field">
+          <label for="s-location">Location</label>
+          <select id="s-location">
+            <option>Any community</option>
+            <option>Downtown Dubai</option>
+            <option>Dubai Marina</option>
+            <option>Palm Jumeirah</option>
+            <option>Business Bay</option>
+            <option>Dubai Hills Estate</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="s-type">Property type</label>
+          <select id="s-type">
+            <option>Any type</option>
+            <option>Apartment</option>
+            <option>Villa</option>
+            <option>Townhouse</option>
+            <option>Penthouse</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="s-budget">Max budget</label>
+          <select id="s-budget">
+            <option>No max</option>
+            <option>1,000,000</option>
+            <option>3,000,000</option>
+            <option>5,000,000</option>
+            <option>10,000,000+</option>
+          </select>
+        </div>
+        <a class="btn btn--primary" href="properties.html" style="align-self:end;">Search</a>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Stats ===== -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="stats">
+        <div><div class="stat__num">45,000+</div><div class="stat__label">homes let &amp; sold</div></div>
+        <div><div class="stat__num">38</div><div class="stat__label">years in Dubai</div></div>
+        <div><div class="stat__num">300+</div><div class="stat__label">expert advisors</div></div>
+        <div><div class="stat__num">12</div><div class="stat__label">community offices</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Featured properties (rendered from data/properties.js) ===== -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Handpicked</span>
+        <h2>Featured properties</h2>
+        <p>A few of the homes our advisors are excited about this week.</p>
+      </div>
+      <div class="property-grid" id="featuredGrid"><!-- JS fills this --></div>
+      <div style="text-align:center; margin-top:36px;">
+        <a class="btn btn--ghost" href="properties.html">View all listings</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">How we help</span>
+        <h2>Everything under one roof</h2>
+        <p>From your first viewing to handing over the keys, betterhomes supports the whole journey.</p>
+      </div>
+      <div class="cards-3">
+        <div class="feature-card">
+          <div class="ico">🏠</div>
+          <h3>Buy &amp; sell</h3>
+          <p>Browse verified listings and let an advisor negotiate the right price on your behalf.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ico">🔑</div>
+          <h3>Leasing</h3>
+          <p>Find your next rental fast, with paperwork and Ejari handled end to end.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ico">📈</div>
+          <h3>Property management</h3>
+          <p>We look after your investment — tenants, maintenance and rent collection.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ico">📊</div>
+          <h3>Valuation</h3>
+          <p>Know exactly what your property is worth with a data-backed market valuation.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ico">🏦</div>
+          <h3>Mortgage advice</h3>
+          <p>Compare rates from leading UAE banks and get pre-approved with confidence.</p>
+        </div>
+        <div class="feature-card">
+          <div class="ico">🧭</div>
+          <h3>Investment consultancy</h3>
+          <p>Build a Dubai portfolio with guidance on yields, areas and off-plan launches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Communities ===== -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section__head">
+        <span class="eyebrow">Explore</span>
+        <h2>Popular communities</h2>
+        <p>Discover the neighbourhoods Dubai loves to call home.</p>
+      </div>
+      <div class="community-grid">
+        <a class="community" href="properties.html">
+          <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=600&q=70" alt="Downtown Dubai" />
+          <div class="community__label">Downtown Dubai <small>Apartments &amp; penthouses</small></div>
+        </a>
+        <a class="community" href="properties.html">
+          <img src="https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=600&q=70" alt="Dubai Marina" />
+          <div class="community__label">Dubai Marina <small>Waterfront living</small></div>
+        </a>
+        <a class="community" href="properties.html">
+          <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=70" alt="Palm Jumeirah" />
+          <div class="community__label">Palm Jumeirah <small>Beachfront villas</small></div>
+        </a>
+        <a class="community" href="properties.html">
+          <img src="https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=600&q=70" alt="Dubai Hills Estate" />
+          <div class="community__label">Dubai Hills Estate <small>Family townhouses</small></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <h2>Thinking of selling or renting out your home?</h2>
+        <p>List with betterhomes and reach thousands of qualified buyers and tenants across Dubai.</p>
+        <a class="btn btn--light" href="contact.html">Book a free valuation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer (shared across pages) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">better<span>homes</span></a>
+          <p style="margin-top:14px; max-width:320px;">Dubai's trusted real estate partner for buying, selling, renting and managing property.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="about.html">About us</a>
+          <a href="contact.html">Contact</a>
+          <a href="properties.html">Careers</a>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="properties.html">Buy</a>
+          <a href="properties.html">Rent</a>
+          <a href="contact.html">Property management</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+97144000000">+971 4 400 0000</a>
+          <a href="mailto:hello@betterhomes.example">hello@betterhomes.example</a>
+          <a href="contact.html">Business Bay, Dubai</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 betterhomes. Demo project for teaching git &amp; github.</span>
+        <span>Privacy · Terms · Cookies</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="data/properties.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
