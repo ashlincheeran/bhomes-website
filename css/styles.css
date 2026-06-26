@@ -10,30 +10,48 @@
 
 /* ---- Design tokens ------------------------------------------------------ */
 :root {
-  /* Brand colours. Change --brand-primary to re-skin the whole site. */
-  --brand-primary: #d6002a;        /* betterhomes signature red          */
-  --brand-primary-dark: #a30020;   /* hover / active state               */
-  --brand-accent: #f5b800;         /* highlights, "featured" ribbons     */
+  /* ----------------------------------------------------------------------
+     betterhomes 2025 brand palette (BH Brand Guidelines, Year 1 refresh).
+     Slate & denim blues lead as primaries; salmon pink is the ONLINE CTA
+     colour ONLY (urgency); sand, powder blue & mist are supporting tones.
+     ---------------------------------------------------------------------- */
+  --slate-blue:  #1f343f;   /* primary  — deep brand / ink / headers     */
+  --denim-blue:  #2c537a;   /* primary  — interactive blue, links, icons */
+  --powder-blue: #7ba0b2;   /* support  — soft accents                   */
+  --sand:        #d9b9a0;   /* support  — warm accent / "featured" tag   */
+  --mist:        #ede8e4;   /* support  — light section background       */
+  --salmon:      #ff787a;   /* CTA ONLY — urgency / primary actions      */
+  --salmon-dark: #f25e60;   /* CTA hover                                 */
+
+  /* Semantic tokens used across the site */
+  --brand-primary: var(--denim-blue);       /* brand blue               */
+  --brand-primary-dark: var(--slate-blue);  /* hover / active           */
+  --brand-cta: var(--salmon);               /* call-to-action buttons   */
+  --brand-cta-dark: var(--salmon-dark);
+  --brand-accent: var(--sand);              /* "featured" ribbons        */
 
   /* Neutrals */
-  --ink: #16181d;                  /* primary text                       */
-  --muted: #5c6470;                /* secondary text                     */
+  --ink: #1f343f;                  /* primary text = slate blue          */
+  --muted: #5f7280;                /* secondary text                     */
   --bg: #ffffff;                   /* page background                    */
-  --surface: #f6f7f9;              /* cards / sections                   */
-  --border: #e4e7ec;               /* hairlines                          */
+  --surface: var(--mist);          /* cards / sections                   */
+  --border: #e3dcd4;               /* hairlines (warm mist/sand tone)    */
 
   /* Shape & depth */
   --radius: 14px;
   --radius-sm: 8px;
-  --shadow: 0 10px 30px rgba(16, 24, 40, 0.08);
-  --shadow-sm: 0 2px 10px rgba(16, 24, 40, 0.06);
+  --shadow: 0 10px 30px rgba(31, 52, 63, 0.10);
+  --shadow-sm: 0 2px 10px rgba(31, 52, 63, 0.07);
 
   /* Layout */
   --container: 1180px;
   --gap: 24px;
 
-  /* Type */
-  --font: "Inter", "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  /* Type — Ivy Mode (serif headlines) + Ivy Epic (body) are paid Adobe
+     fonts; the brand guidelines name Georgia + Segoe UI as the system
+     fallbacks, which is exactly what we use on this no-build static site. */
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  --font-head: Georgia, "Times New Roman", "Iowan Old Style", serif;
 }
 
 /* ---- Reset-ish ---------------------------------------------------------- */
@@ -49,7 +67,7 @@ body {
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
-h1, h2, h3, h4 { line-height: 1.15; margin: 0 0 .5em; font-weight: 800; letter-spacing: -0.02em; }
+h1, h2, h3, h4 { line-height: 1.15; margin: 0 0 .5em; font-weight: 700; font-family: var(--font-head); letter-spacing: 0; }
 p { margin: 0 0 1em; }
 ul { margin: 0; padding: 0; list-style: none; }
 
@@ -72,8 +90,21 @@ ul { margin: 0; padding: 0; list-style: none; }
   font-weight: 700;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--brand-primary);
+  color: var(--denim-blue);
   margin-bottom: 12px;
+}
+/* Diamond motif (the brand's rotated-square mark) as a small salmon accent. */
+.eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 9px;
+  background: var(--salmon);
+  transform: rotate(45deg);
+  vertical-align: middle;
+  position: relative;
+  top: -1px;
 }
 
 /* ---- Buttons ------------------------------------------------------------ */
@@ -91,10 +122,11 @@ ul { margin: 0; padding: 0; list-style: none; }
   transition: transform .08s ease, background .15s ease, color .15s ease;
 }
 .btn:active { transform: translateY(1px); }
-.btn--primary { background: var(--brand-primary); color: #fff; }
-.btn--primary:hover { background: var(--brand-primary-dark); }
-.btn--ghost { background: transparent; color: var(--ink); border-color: var(--border); }
-.btn--ghost:hover { border-color: var(--ink); }
+/* Primary = the salmon CTA. Per brand, salmon carries dark slate text. */
+.btn--primary { background: var(--brand-cta); color: var(--slate-blue); }
+.btn--primary:hover { background: var(--brand-cta-dark); color: var(--slate-blue); }
+.btn--ghost { background: transparent; color: var(--denim-blue); border-color: var(--denim-blue); }
+.btn--ghost:hover { background: var(--denim-blue); color: #fff; }
 .btn--light { background: #fff; color: var(--ink); }
 .btn--block { width: 100%; }
 
@@ -138,7 +170,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   position: relative;
   color: #fff;
   background:
-    linear-gradient(180deg, rgba(16,24,40,.35), rgba(16,24,40,.75)),
+    linear-gradient(180deg, rgba(31,52,63,.45), rgba(31,52,63,.82)),
     url("https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1600&q=70") center/cover;
 }
 .hero__inner { padding: 110px 0 130px; max-width: 720px; }
@@ -245,7 +277,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .feature-card .ico {
   width: 48px; height: 48px; border-radius: 12px;
   display: grid; place-items: center; font-size: 1.4rem;
-  background: rgba(214, 0, 42, .08); color: var(--brand-primary);
+  background: rgba(44, 83, 122, .10); color: var(--denim-blue);
   margin-bottom: 16px;
 }
 .feature-card h3 { font-size: 1.15rem; }
@@ -260,14 +292,14 @@ ul { margin: 0; padding: 0; list-style: none; }
 .community img { width: 100%; height: 100%; object-fit: cover; }
 .community__label {
   position: absolute; inset: auto 0 0 0; padding: 18px;
-  background: linear-gradient(180deg, transparent, rgba(16,24,40,.85));
-  font-weight: 800; font-size: 1.05rem;
+  background: linear-gradient(180deg, transparent, rgba(31,52,63,.88));
+  font-weight: 700; font-size: 1.05rem;
 }
 .community__label small { display: block; font-weight: 600; opacity: .85; }
 
 /* ---- CTA band ----------------------------------------------------------- */
 .cta {
-  background: var(--brand-primary);
+  background: var(--slate-blue);
   color: #fff;
   border-radius: var(--radius);
   padding: 48px;
@@ -304,7 +336,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .info-list .ico {
   width: 42px; height: 42px; border-radius: 10px; flex: none;
   display: grid; place-items: center; font-size: 1.2rem;
-  background: rgba(214,0,42,.08); color: var(--brand-primary);
+  background: rgba(44, 83, 122, .10); color: var(--denim-blue);
 }
 .form-note { font-size: .85rem; color: var(--muted); }
 .form-success {
@@ -360,3 +392,23 @@ ul { margin: 0; padding: 0; list-style: none; }
   .search-bar { grid-template-columns: 1fr; }
   .hero__inner { padding: 70px 0 80px; }
 }
+
+/* ---- Floating WhatsApp button (feature/whatsapp-button) ---------------- */
+.whatsapp-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 1.6rem;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+  transition: transform .12s ease;
+}
+.whatsapp-fab:hover { transform: scale(1.06); }
