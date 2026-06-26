@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Properties for sale &amp; rent in Dubai — betterhomes</title>
+  <!-- Every page links the shared stylesheet with a relative path. -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== Shared site header (pasted verbatim from the brand spec) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">better<span>homes</span></a>
+      <nav class="nav" id="nav">
+        <a href="properties.html">Buy</a>
+        <a href="properties.html">Rent</a>
+        <a href="properties.html">New projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--primary" href="contact.html">List your property</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== Page hero: short intro for the listings page ===== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Browse properties</h1>
+      <p>Explore homes for sale and rent across Dubai's most sought-after communities. Use the filters to narrow your search.</p>
+    </div>
+  </section>
+
+  <!-- ===== Main listings area: filters on the left, results on the right ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="listing-layout">
+
+        <!-- LEFT: filter controls. Each <select> has an id the JS reads. -->
+        <aside class="filters">
+          <h3>Filters</h3>
+
+          <!-- Purpose: buy (sale) or rent -->
+          <div class="field">
+            <label for="f-purpose">Purpose</label>
+            <select id="f-purpose">
+              <option value="">Any</option>
+              <option value="sale">Buy</option>
+              <option value="rent">Rent</option>
+            </select>
+          </div>
+
+          <!-- Community: the options below cover every community in the data -->
+          <div class="field">
+            <label for="f-community">Community</label>
+            <select id="f-community">
+              <option value="">Any</option>
+              <option value="Downtown Dubai">Downtown Dubai</option>
+              <option value="Palm Jumeirah">Palm Jumeirah</option>
+              <option value="Dubai Marina">Dubai Marina</option>
+              <option value="Dubai Hills Estate">Dubai Hills Estate</option>
+              <option value="Business Bay">Business Bay</option>
+              <option value="Jumeirah Village Circle">Jumeirah Village Circle</option>
+              <option value="Arabian Ranches">Arabian Ranches</option>
+              <option value="Emirates Hills">Emirates Hills</option>
+            </select>
+          </div>
+
+          <!-- Property type -->
+          <div class="field">
+            <label for="f-type">Property type</label>
+            <select id="f-type">
+              <option value="">Any</option>
+              <option value="Apartment">Apartment</option>
+              <option value="Villa">Villa</option>
+              <option value="Townhouse">Townhouse</option>
+              <option value="Penthouse">Penthouse</option>
+            </select>
+          </div>
+
+          <!-- Minimum bedrooms. "Studio" means 0 beds; "4+" means 4 or more. -->
+          <div class="field">
+            <label for="f-beds">Min beds</label>
+            <select id="f-beds">
+              <option value="">Any</option>
+              <option value="studio">Studio</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4+</option>
+            </select>
+          </div>
+        </aside>
+
+        <!-- RIGHT: results bar (count + sort) and the property grid -->
+        <div>
+          <div class="results-bar">
+            <span class="count" id="resultCount">0 properties</span>
+            <select id="f-sort">
+              <option value="newest">Newest</option>
+              <option value="price-asc">Price low–high</option>
+              <option value="price-desc">Price high–low</option>
+            </select>
+          </div>
+
+          <!-- The JS renders property cards into this grid. -->
+          <div id="grid" class="property-grid"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Shared site footer (pasted verbatim from the brand spec) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">better<span>homes</span></a>
+          <p style="margin-top:14px; max-width:320px;">Dubai's trusted real estate partner for buying, selling, renting and managing property.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="about.html">About us</a>
+          <a href="contact.html">Contact</a>
+          <a href="properties.html">Careers</a>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="properties.html">Buy</a>
+          <a href="properties.html">Rent</a>
+          <a href="contact.html">Property management</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+97144000000">+971 4 400 0000</a>
+          <a href="mailto:hello@betterhomes.example">hello@betterhomes.example</a>
+          <a href="contact.html">Business Bay, Dubai</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 betterhomes. Demo project for teaching git &amp; github.</span>
+        <span>Privacy · Terms · Cookies</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Scripts, loaded in order: data first, shared helpers, then this page ===== -->
+  <script src="data/properties.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/properties.js"></script>
+</body>
+</html>

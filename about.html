@@ -1,0 +1,182 @@
+<!--
+  about.html
+  The "About" page for the betterhomes demo site.
+  Plain HTML — no build step. All content is original, fictional demo data.
+  Reuses the shared CSS classes defined in css/styles.css.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About betterhomes — Dubai real estate</title>
+  <!-- Relative link to the shared stylesheet (same path on every page). -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===== Shared header (pasted verbatim from the spec) ===== -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">better<span>homes</span></a>
+      <nav class="nav" id="nav">
+        <a href="properties.html">Buy</a>
+        <a href="properties.html">Rent</a>
+        <a href="properties.html">New projects</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav__actions">
+        <a class="btn btn--primary" href="contact.html">List your property</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ===== Page hero: short intro for the About page ===== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>About betterhomes</h1>
+      <p>Helping people find the right home in Dubai for nearly four decades.</p>
+    </div>
+  </section>
+
+  <!-- ===== Company story: image on the left, text on the right ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="story">
+        <!-- Dubai / real-estate photo from Unsplash. -->
+        <img
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=70"
+          alt="Modern Dubai skyline with high-rise buildings" />
+        <div>
+          <h2>Built in Dubai, for Dubai</h2>
+          <p>
+            betterhomes opened its first office in Dubai in 1986, back when much of
+            today's skyline was still desert. We started with a simple idea: that
+            buying, selling or renting a home should feel straightforward and honest,
+            not stressful. Decade by decade we grew alongside the city we love.
+          </p>
+          <p>
+            Today we are one of the emirate's most established agencies, with advisors
+            working across 12 community offices from Downtown to the Marina. We know
+            these neighbourhoods street by street, and we use that local knowledge to
+            match every client with a home and a deal that genuinely fits them.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Stats strip on a surface background ===== -->
+  <section class="section section--surface">
+    <div class="container">
+      <div class="section__head">
+        <h2>By the numbers</h2>
+        <p>Nearly four decades of helping Dubai feel like home.</p>
+      </div>
+      <div class="stats">
+        <div>
+          <div class="stat__num">45,000+</div>
+          <div class="stat__label">homes let &amp; sold</div>
+        </div>
+        <div>
+          <div class="stat__num">38</div>
+          <div class="stat__label">years in Dubai</div>
+        </div>
+        <div>
+          <div class="stat__num">300+</div>
+          <div class="stat__label">expert advisors</div>
+        </div>
+        <div>
+          <div class="stat__num">12</div>
+          <div class="stat__label">community offices</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Company values: three feature cards ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Our values</h2>
+        <p>What guides us</p>
+      </div>
+      <div class="value-grid">
+        <div class="feature-card">
+          <div class="ico">🤝</div>
+          <h3>Integrity</h3>
+          <p>
+            We give clear, honest advice — even when it is not the easy answer.
+            Every price, fee and figure is on the table from day one.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="ico">📍</div>
+          <h3>Local expertise</h3>
+          <p>
+            Our advisors live and work in the communities they serve, so you get
+            real insight into schools, commutes, service charges and value.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="ico">💬</div>
+          <h3>Client-first</h3>
+          <p>
+            Your goals lead the way. We listen first, move at your pace and stay in
+            touch long after the keys change hands.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Closing call-to-action band ===== -->
+  <section class="cta">
+    <div class="container">
+      <h2>Let's find your place in Dubai</h2>
+      <p>Whether you want to join our team or talk to an advisor, we would love to hear from you.</p>
+      <a class="btn btn--light" href="contact.html">Get in touch</a>
+    </div>
+  </section>
+
+  <!-- ===== Shared footer (pasted verbatim from the spec) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">better<span>homes</span></a>
+          <p style="margin-top:14px; max-width:320px;">Dubai's trusted real estate partner for buying, selling, renting and managing property.</p>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <a href="about.html">About us</a>
+          <a href="contact.html">Contact</a>
+          <a href="properties.html">Careers</a>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <a href="properties.html">Buy</a>
+          <a href="properties.html">Rent</a>
+          <a href="contact.html">Property management</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <a href="tel:+97144000000">+971 4 400 0000</a>
+          <a href="mailto:hello@betterhomes.example">hello@betterhomes.example</a>
+          <a href="contact.html">Business Bay, Dubai</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 betterhomes. Demo project for teaching git &amp; github.</span>
+        <span>Privacy · Terms · Cookies</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Scripts: shared data first, then site behaviour ===== -->
+  <script src="data/properties.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
