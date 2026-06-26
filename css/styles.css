@@ -11,9 +11,9 @@
 /* ---- Design tokens ------------------------------------------------------ */
 :root {
   /* Brand colours. Change --brand-primary to re-skin the whole site. */
-  --brand-primary: #d6002a;        /* betterhomes signature red          */
-  --brand-primary-dark: #a30020;   /* hover / active state               */
-  --brand-accent: #f5b800;         /* highlights, "featured" ribbons     */
+  --brand-primary: #c8102e;        /* refreshed crimson */
+  --brand-primary-dark: #8f0a20;   /* hover / active state */
+  --brand-accent: #f0a500;         /* highlights, featured ribbons */
 
   /* Neutrals */
   --ink: #16181d;                  /* primary text                       */
